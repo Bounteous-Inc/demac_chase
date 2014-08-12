@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Demac_Chase>
+            <version>0.0.1</version>
+        </Demac_Chase>
+    </modules>
+    <global>
+        <models>
+            <demac_chase>
+                <class>Demac_Chase_Model</class>
+            </demac_chase>
+        </models>
+        <helpers>
+            <demac_chase>
+                <class>Demac_Chase_Helper</class>
+            </demac_chase>
+        </helpers>
+    </global>
+
+    <default>
+        <payment>
+            <demac_chase>
+                <active>0</active>
+                <useccv>1</useccv>
+                <model>demac_chase/method</model>
+                <order_status>processing</order_status>
+                <title>Demac Chase PaymentTech</title>
+                <payment_action>authorize</payment_action>
+                <cctypes>AE,VI,MC,DI</cctypes>
+                <allowspecific>0</allowspecific>
+            </demac_chase>
+        </payment>
+    </default>
+</config>

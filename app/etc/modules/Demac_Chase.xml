@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Demac_Chase>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Demac_Chase>
+    </modules>
+</config>
