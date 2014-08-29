@@ -12,15 +12,12 @@
     },
     "minimum-stability": "dev",
     "require-dev": {
-        "phpspec/phpspec": "~2.0",
         "magetest/magento-phpspec-extension": "~2.0"
     },
     "autoload": {
         "psr-0": {
             "": [
                 "app",
-                "app/code/local",
-                "app/code/community",
                 "lib",
                 "/srv/www/ce1810.demacmedia.com/public_html/app",
                 "/srv/www/ce1810.demacmedia.com/public_html/app/code/core",

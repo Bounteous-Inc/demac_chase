@@ -16,7 +16,4 @@ class Demac_Chase_Model_Paymentech_Api_AdapterSpec extends ObjectBehavior
     {
         $this->shouldHaveType('Demac_Chase_Model_Paymentech_Api_Adapter_Abstract');
     }
-
-
-
 }

@@ -29,6 +29,7 @@
                 <payment_action>authorize</payment_action>
                 <cctypes>AE,VI,MC,DI</cctypes>
                 <allowspecific>0</allowspecific>
+                <wsdl>https://ws.paymentech.net/PaymentechGateway/wsdl/PaymentechGateway.wsdl</wsdl>
             </demac_chase>
         </payment>
     </default>

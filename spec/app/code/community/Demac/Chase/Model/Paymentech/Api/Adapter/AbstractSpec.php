@@ -12,20 +12,33 @@ class Demac_Chase_Model_Paymentech_Api_Adapter_AbstractSpec extends ObjectBehavi
         $this->shouldHaveType('Demac_Chase_Model_Paymentech_Api_Adapter_Abstract');
     }
 
-    function it_should_have_a_wsdl_url()
+    function let(\Demac_Chase_Model_Adapter_DatabaseAdapter $adapter)
     {
+        $this->beConstructedWith(array('database_adapter' => $adapter));
+    }
+
+    function it_should_have_a_wsdl_url($adapter)
+    {
+        $adapter->getConfigValue('payment/demac_chase/wsdl',null)
+                ->willReturn('https://ws.paymentech.net/PaymentechGateway/wsdl/PaymentechGateway.wsdl');
+
         $this->getWsdlUrl()->shouldReturn('https://ws.paymentech.net/PaymentechGateway/wsdl/PaymentechGateway.wsdl');
     }
 
     function it_should_return_the_soap_client_options()
     {
-        $this->getSoapClientOptions()->shouldReturn();
+        $this->getSoapClientOptions()->shouldBeArray();
     }
 
-    function it_should_have_a_wsdl_client()
+    function it_should_have_a_wsdl_client($adapter)
     {
-        $this->initializeApiClient()->shouldReturn($this);
+        $adapter->getConfigValue('payment/demac_chase/wsdl',null)
+                ->willReturn('https://ws.paymentech.net/PaymentechGateway/wsdl/PaymentechGateway.wsdl');
+        $adapter->getConfigValue('payment/demac_chase/login',null)
+                ->willReturn('login');
+        $adapter->getConfigValue('payment/demac_chase/password',null)
+                ->willReturn('password');
+
+        $this->initializeApiClient()->shouldReturnAnInstanceOf('SoapClient');
     }
-
-
 }
